@@ -8,6 +8,10 @@ a {
 	outline: 0;
 }
 
+nav {
+	float: right;
+}
+
 header {
 	margin-bottom: 5%;
 }
