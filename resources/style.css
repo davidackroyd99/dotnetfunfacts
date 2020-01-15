@@ -3,6 +3,11 @@ body {
 	margin: auto;
 }
 
+a {
+	color: blue;
+	outline: 0;
+}
+
 header {
 	margin-bottom: 5%;
 }
