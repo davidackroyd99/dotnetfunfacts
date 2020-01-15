@@ -12,6 +12,10 @@ nav {
 	float: right;
 }
 
+nav a {
+	margin-left: 10px;
+}
+
 header {
 	margin-bottom: 5%;
 }
