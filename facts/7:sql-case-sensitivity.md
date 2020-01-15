@@ -1,4 +1,4 @@
-### SQL WHERE Clauses Are Not Case Sensitive
+### SQL String Comparisons Are Not Case Sensitive
 
 T-SQL is case insensitive and this means that the WHERE clauses that compare column values to some known string will not be case sensitive either. This means that
 
