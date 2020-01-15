@@ -1,3 +1,13 @@
-h1 {
-    color: red;
+body {
+	width: 50%;
+	margin: auto;
+}
+
+header {
+	margin-bottom: 5%;
+}
+
+footer {
+	margin-top: 10%;
+	border-top: 2px solid black;
 }
