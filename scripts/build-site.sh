@@ -1,13 +1,21 @@
 #!/bin/sh
 
-rm "../www/index.html"
-cat "../templates/header.html" >> "../www/index.html"
+OUT_FILE="../www/index.html"
+HEADER_TEMPLATE="../templates/header.html"
+FACT_START_TEMPLATE="../templates/fact-start.html"
+FACT_END_TEMPLATE="../templates/fact-end.html"
+FOOTER_TEMPLATE="../templates/footer.html"
+FACTS_DIR="../facts/*"
 
-for file in ../facts/*
+
+rm $OUT_FILE 
+cat $HEADER_TEMPLATE >> $OUT_FILE
+
+for file in $FACTS_DIR
 do 
-	cat "../templates/fact-start.html" >> "../www/index.html"
-	markdown $file >> "../www/index.html"
-	cat "../templates/fact-end.html" >> "../www/index.html"
+	cat $FACT_START_TEMPLATE >> $OUT_FILE
+	markdown $file >> $OUT_FILE
+	cat $FACT_END_TEMPLATE >> $OUT_FILE
 done
 
-cat "../templates/footer.html" >> "../www/index.html"
+cat $FOOTER_TEMPLATE >> $OUT_FILE
