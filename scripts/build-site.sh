@@ -20,19 +20,19 @@ echo "factsArray = [" >> "${OUT_DIR}/data.js"
 
 yes | cp -rf $RESOURCES_DIR $OUT_DIR
 
-for file in $(ls -r -v $FACTS_DIR)
+for file in $(ls -r -v $FACTS_DIR) # go in reverse order, newest fact first
 do 
-	fact_name=$(head -1 $file | cut -c4-)
-	fact_file=$(echo $fact_name | tr " " _ | tr . _)
-	fact_file="${fact_file}.html"
+	fact_name=$(head -1 $file | cut -c4-) # get the markdown title, get rid of the leading hashes and space
+	fact_file=$(echo $fact_name | tr " " _ | tr . _) # replace spaces and dots with underscores
+	fact_file="${fact_file}.html" # add .html
 	
-	echo "\"${fact_file}\"," >>  "${OUT_DIR}/data.js"
-
+	echo "\"${fact_file}\"," >>  "${OUT_DIR}/data.js" # write this to the js file that contains all the data for 
+														# the random fact functionality and so on
 	cat $FACT_START_TEMPLATE >> $OUT_FILE
-	echo "<a href='${fact_file}'>${fact_name}</a>" >> $OUT_FILE
+	echo "<a href='${fact_file}'>${fact_name}</a>" >> $OUT_FILE # write the title of each fact out to the index.html page
 	cat $FACT_END_TEMPLATE >> $OUT_FILE
 
-	fact_file_path="${OUT_DIR}/${fact_file}"
+	fact_file_path="${OUT_DIR}/${fact_file}" # finally actually make the fact page
 	cat $HEADER_TEMPLATE >> $fact_file_path
 	markdown $file >> $fact_file_path
 	cat $FOOTER_TEMPLATE >> $fact_file_path
