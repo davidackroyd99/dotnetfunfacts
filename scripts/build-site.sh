@@ -18,7 +18,7 @@ cat $HEADER_TEMPLATE >> $OUT_FILE
 
 yes | cp -rf $RESOURCES_DIR $OUT_DIR
 
-for file in $(ls $FACTS_DIR | sort -r)
+for file in $(ls -r -v $FACTS_DIR)
 do 
 	fact_name=$(head -1 $file | cut -c4-)
 	fact_file=$(echo $fact_name | tr " " _ | tr . _)
