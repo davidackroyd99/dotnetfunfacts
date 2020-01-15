@@ -16,6 +16,8 @@ mkdir $OUT_DIR
 
 cat $HEADER_TEMPLATE >> $OUT_FILE
 
+echo "factsArray = [" >> "${OUT_DIR}/data.js"
+
 yes | cp -rf $RESOURCES_DIR $OUT_DIR
 
 for file in $(ls -r -v $FACTS_DIR)
@@ -24,6 +26,8 @@ do
 	fact_file=$(echo $fact_name | tr " " _ | tr . _)
 	fact_file="${fact_file}.html"
 	
+	echo "\"${fact_file}\"," >>  "${OUT_DIR}/data.js"
+
 	cat $FACT_START_TEMPLATE >> $OUT_FILE
 	echo "<a href='${fact_file}'>${fact_name}</a>" >> $OUT_FILE
 	cat $FACT_END_TEMPLATE >> $OUT_FILE
@@ -34,5 +38,8 @@ do
 	cat $FOOTER_TEMPLATE >> $fact_file_path
 
 done
+
+echo "]" >> "${OUT_DIR}/data.js"
+
 
 cat $FOOTER_TEMPLATE >> $OUT_FILE
