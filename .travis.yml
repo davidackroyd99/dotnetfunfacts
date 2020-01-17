@@ -1,7 +1,7 @@
 language: bash
 
 before_install:
-    - sudo npm install markdown
+    - npm install markdown
 
 script:
     - bash scripts/build-site.sh
