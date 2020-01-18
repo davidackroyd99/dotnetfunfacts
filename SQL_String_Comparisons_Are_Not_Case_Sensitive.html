@@ -9,7 +9,13 @@
 			<nav id="navbar"><a href="index.html">Home</a></nav>
 			<h1>.NET Fun Facts</h1>
 			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
-		</header>		<footer>
+		</header><h3 id="sql-string-comparisons-are-not-case-sensitive">SQL String Comparisons Are Not Case Sensitive</h3>
+<p>T-SQL is case insensitive and this means that the WHERE clauses that compare column values to some known string will not be case sensitive either. This means that</p>
+<pre><code>SELECT * FROM [TABLE_NAME] WHERE [COLUMN] = &#39;this is a string&#39;
+</code></pre><p>and</p>
+<pre><code>SELECT * FROM [TABLE_NAME] WHERE [COLUMN] = &#39;THIS IS A STRING&#39;
+</code></pre><p>will return the same result sets.</p>
+		<footer>
 			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
 		</footer>
 
