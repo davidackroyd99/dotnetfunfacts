@@ -1,4 +1,5 @@
 factsArray = [
+"The_Basics_of_CORS_With_IIS.html",
 "T-SQL_IN_Statement.html",
 "A_New_Way_To_Format_Strings.html",
 "Importing_and_Exporting_CSV_Data_From_SQLite3.html",

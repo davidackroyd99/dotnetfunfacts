@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="the-basics-of-cors-with-iis">The Basics of CORS With IIS</h3>
+<p>The same-origin policy stipulates that a web browser should allow scripts on a web page to access data on a second page, but only if they have the same origin. This prevents someone from writing a piece of JavaScript that downloads the contents of another website that a secure user logs in to (say Facebook) and sends it back to their server. When writing an web-based API, for example, you need to enable CORS to allow scripts served by other origins to access your data.</p>
+<p>CORS (Cross Origin Resource Sharing) defines a set of headers that allow the browser and the server to communicate about which requests are and aren&#39;t allowed. To enable CORS, simply add the following to your web.config:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+ &lt;system.webServer&gt;
+   &lt;httpProtocol&gt;
+     &lt;customHeaders&gt;
+       &lt;add name=&quot;Access-Control-Allow-Origin&quot; value=&quot;*&quot; /&gt;
+     &lt;/customHeaders&gt;
+   &lt;/httpProtocol&gt;
+ &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre><p>You can also specify a certain domain to be used:</p>
+<pre><code>&lt;add name=&quot;Access-Control-Allow-Origin&quot; value=&quot;http://localhost:1506&quot; /&gt;
+</code></pre>		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>
