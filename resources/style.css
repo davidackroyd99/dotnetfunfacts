@@ -6,6 +6,7 @@ body {
 a {
 	color: blue;
 	outline: 0;
+    text-decoration: none;
 }
 
 nav {
@@ -13,7 +14,7 @@ nav {
 }
 
 nav a {
-	margin-left: 10px;
+	margin: 0px 10px;
 }
 
 header {
@@ -23,4 +24,8 @@ header {
 footer {
 	margin-top: 10%;
 	border-top: 2px solid black;
+}
+
+.fact-link-container {
+	margin: 10px 0px;
 }
