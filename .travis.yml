@@ -1,7 +1,7 @@
 language: bash
 
 before_install:
-    - npm install markdown
+    - npm install markdown-to-html -g
 
 script:
     - bash scripts/build-site.sh
