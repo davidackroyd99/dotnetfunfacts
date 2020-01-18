@@ -1,0 +1,26 @@
+body {
+	width: 50%;
+	margin: auto;
+}
+
+a {
+	color: blue;
+	outline: 0;
+}
+
+nav {
+	float: right;
+}
+
+nav a {
+	margin-left: 10px;
+}
+
+header {
+	margin-bottom: 5%;
+}
+
+footer {
+	margin-top: 10%;
+	border-top: 2px solid black;
+}
