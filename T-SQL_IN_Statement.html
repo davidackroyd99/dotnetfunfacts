@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a></nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="t-sql-in-statement">T-SQL IN Statement</h3>
+<p>In T-SQL you can use the <code>IN</code> statement in a <code>WHERE</code> clause to filter results by a list or subquery.</p>
+<p>The following query selects all employees with any of the job titles in the list.</p>
+<pre><code>SELECT Name, Salary FROM Employees WHERE Title IN (&#39;Software Engineer&#39;, &#39;Support Technician&#39;, &#39;Project Manager&#39;)
+</code></pre><p>The following query finds all of the employees who work in any of the offices in Plymouth. </p>
+<pre><code>SELECT Name, Salary FROM Employees WHERE OfficeName IN (Select OfficeName FROM Offices WHERE Location = &#39;Plymouth&#39;)
+</code></pre><p>Subqueries with IN may be more readable than using multiple joins and they can help when writing a quick query to get some data but they often have performance issues so if you are building them into an application make sure to optimise them.</p>
+		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>
