@@ -9,11 +9,12 @@
 			<nav id="navbar"><a href="index.html">Home</a>|</nav>
 			<h1>.NET Fun Facts</h1>
 			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
-		</header><h3 id="null-confusion">Null Confusion</h3>
-<p>Null can be confusing, so here is a metaphor that hopefully makes it a bit clearer.</p>
-<p>Imagine that you work in a hotel with lots of difference rooms. You have to distribute a load of parcels that have pieces of paper attached to them. If the piece of paper is blank, that doesn&#39;t mean that the piece of paper doesn&#39;t exist, or that none of the rooms exist, it just means that you can&#39;t deliver the parcel.</p>
-<p>A reference is like a piece of paper, and a parcel is like a message that is sent to an object - the piece of paper <em>can</em> have a room number written on it, but it doesn&#39;t <em>have</em> to, and the parcel needs to arrive somewhere in order to be delivered. The .NET Framework &#39;knows&#39; that it has to throw a NullReferenceException when you try to &#39;use&#39; a &#39;null object&#39;, because the message that you send doesn&#39;t have a destination.</p>
-		<footer>
+		</header><h3 id="t-sql-where-column-null-does-not-work">T-SQL WHERE [column] != NULL Does Not Work</h3>
+<p>C# will allow you to test if an object is null or not using the <code>!=</code> operator, but <strong>sql server won&#39;t</strong>.</p>
+<pre><code>SELECT * FROM [table] WHERE [column] != NULL -- returns 0 results
+
+SELECT * FROM [table] WHERE [column] IS NOT NULL -- returns expected results
+</code></pre>		<footer>
 			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
 			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
 		</footer>
