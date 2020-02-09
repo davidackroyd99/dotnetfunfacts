@@ -43,3 +43,5 @@ echo "]" >> "${OUT_DIR}data.js"
 
 
 cat $FOOTER_TEMPLATE >> $OUT_FILE
+
+echo "dackroyd.com" >> "${OUT_DIR}CNAME"
