@@ -16,7 +16,7 @@ This will write out Log4Net internal messages to the trace debugger. To write th
 		       <add
 		           name="textWriterTraceListener"
 		           type="System.Diagnostics.TextWriterTraceListener"
-		           initializeData="{FILE_TO_WRITE TO{" />
+		           initializeData="{FILE_TO_WRITE TO}" />
 		   </listeners>
 	   </trace>
 	</system.diagnostics>
