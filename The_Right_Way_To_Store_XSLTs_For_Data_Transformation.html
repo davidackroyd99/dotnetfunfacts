@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="the-right-way-to-store-xslts-for-data-transformation">The Right Way To Store XSLTs For Data Transformation</h3>
+<p>Still, in 2020, a lot of projects .NET developers undertake involve reading data from xml files that have been FTP&#39;d on to the server, parsing these documents, and then performing some action. The developer rarely has control over the schema of the input XML and to make matters worse it&#39;s often subject to change, so the developer will write an XSLT file which transforms the input into some XML format that can then be serialized.</p>
+<p>Before, I used to read the XSLT from a directory stored in settings, but I was constantly losing the XSLT, or placing it in the wrong folder, or not realising it was there when I came to fix an issue. The XSLT needs to be treated like any other part of the code - under source control and part of the final .dll.</p>
+<p>After including the XSLT in your csproj like any normal C# file, in visual studio you can set the <code>BuildAction</code> property of the XSLT to <code>EmbeddedResource</code>. You can then read the xslt as follows:</p>
+<pre><code>var assembly = Assembly.GetExecutingAssembly();
+
+// Rather than messing around with Namespaces, you can just call GetManifestResouceNames()
+// And filter using this bit of LINQ
+var resourceName = assembly.GetManifestResourceNames()
+      .Single(str =&gt; str.EndsWith(&quot;ProductTransform.xslt&quot;));
+
+using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+using (StreamReader reader = new StreamReader(stream))
+{
+    // Do whatever you want to do
+}
+</code></pre><p>If you build the assembly, it will result in just one .dll that can be deployed normally. Code snippet courtesy of <a href="https://stackoverflow.com/a/3314213">this StackOverflow answer</a>.</p>
+		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>

@@ -1,4 +1,5 @@
 factsArray = [
+"The_Right_Way_To_Store_XSLTs_For_Data_Transformation.html",
 "Pattern_Matching_Switch.html",
 "Troubleshooting_Log4Net.html",
 "WHERE_[column]_!=_NULL_Does_Not_Work.html",
