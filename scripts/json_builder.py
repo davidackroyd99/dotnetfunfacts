@@ -42,7 +42,11 @@ class PageDoc(JsonDoc):
 				break
 			if meta_mode and ":" in line:
 				key, val = line.split(":")
-				metadata[key] = val
+				
+				if key == "tags":
+					metadata["tags"] = val.split(";")
+				else:
+					metadata[key] = val
 		
 		return metadata
 	
