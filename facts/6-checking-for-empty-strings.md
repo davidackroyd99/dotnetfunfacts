@@ -1,3 +1,5 @@
+This fact was actually created before the date listed, but the metadata system was not created until 08/03/2020.
+
 !meta
 
 title:Checking For Empty Strings With String.IsNullOrWhitespace
