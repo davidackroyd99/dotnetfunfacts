@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>.NET Fun Facts</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="content" id="app">
+            <div class="fact-list">
+                <li v-for="fact in facts" :key="fact.id">
+                    <input type="button" @click="setCurrentFact(fact.id)" :value="fact.metadata.title"/>
+                </li>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
