@@ -62,13 +62,9 @@ class FactDoc(JsonDoc):
 	def _get_fact_body(self, fact_data: str) -> str:
 		return fact_data.split(END_META)[1]
 
-	def serialize_head(self) -> dict:
+	def serialize(self) -> dict:
 		d = super().serialize()
 		d['metadata'] = self.metadata
-		return d
-
-	def serialize(self) -> dict:
-		d = self.serialize_head()
 		d['body'] = self.body
 		return d
 
@@ -79,7 +75,7 @@ class IndexDoc(JsonDoc):
 		self.facts:List[dict] = []
 
 	def add_fact(self, fact: FactDoc):
-		self.facts.append(fact.serialize_head())
+		self.facts.append(fact.serialize())
 	
 	def serialize(self):
 		d = super().serialize()
@@ -92,6 +88,5 @@ p = Path("./facts")
 for fact_file in [str(path) for path in p.glob("*.md")]:
 	doc = FactDoc(fact_file)
 	index.add_fact(doc)
-	doc.save()
 
 index.save()
