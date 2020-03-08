@@ -2,24 +2,13 @@ This fact was actually created before the date listed, but the metadata system w
 
 !meta
 
-title: notes about the fact that will be ignored by the parser.
+title: The Difference Between Readonly and Const
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
 tags:
 
 !endmeta
-
-
-Some notes about the fact that will be ignored by the parser.
-
-!meta
-We can also put notes about certain metadata here, and they will be ignored by the parser unless they contain a colon.
-title:The Difference Between Readonly and Const
-author:David Ackroyd
-
-!end
-
 
 ### The Difference Between Readonly and Const
 
