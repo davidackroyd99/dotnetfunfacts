@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="easy-date-printing">Easy Date Printing</h3>
+<p>You can pass a format into the <code>ToString</code> method of a <code>DateTime</code> object to easily print a date with a specific format. You can specify your own format (e.g. &quot;dd-MM-yyyy&quot;) or you can use one of the default one-character &#39;format specifiers&#39; found <a href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netframework-4.8">here</a>.</p>
+<p>This will default to the current culture. If you want to change the culture, you can pass in an <code>IFormatProvider</code>. These are easy to initialise; if you would like the days and months to be printed in German, you could pass <code>CultureInfo.CreateSpecificCulture(&quot;de-DE&quot;)</code> as the second parameter.</p>
+		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="common-cause-of-an-invalidoperationexception">Common Cause of an InvalidOperationException</h3>
+<pre><code>int? a = null;
+Console.WriteLine(a.Value);
+</code></pre><p>When you attempt to access the value of a  nullable value type that does not have a value you will get an InvalidOperationException (instead of a NullReferenceException), which you might not expect. According to the .NET Framework documentation, &#39;this exception is thrown when a method call is invalid for the object&#39;s current state.&#39; However, the documentation on the exception can be confusing as attempting to access the value of a nullable type does not appear in the quite extensive list of possible causes. </p>
+		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>

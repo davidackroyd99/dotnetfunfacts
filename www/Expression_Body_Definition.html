@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="data.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+			<h1>.NET Fun Facts</h1>
+			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+		</header><h3 id="expression-body-definition">Expression Body Definition</h3>
+<p>C# 6 provides a more readable format for single expression methods and readonly properties called an &#39;expression body definition&#39;.</p>
+<pre><code>public class MyClass
+{
+    public int MyNumber =&gt; 5;
+
+    public override string ToString() =&gt; $&quot;My number is {MyNumber}&quot;;
+}
+</code></pre><p>This means that we can fit a single expression method on to one line with lambda-esque syntax.</p>
+<p>C# 7 extends this feature to property getters and setters, and constructors.</p>
+<pre><code>public class MyClass
+{
+    private int myNumber;
+
+    public MyClass(int n) =&gt; MyNumber = n;
+
+    public int MyNumber
+    {
+        get =&gt; myNumber;
+        set =&gt; myNumber = value;
+    }
+
+    public override string ToString() =&gt; $&quot;My number is {MyNumber}&quot;;
+}
+</code></pre>		<footer>
+			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
+			});
+		</script>
+	</body>
+</html>
