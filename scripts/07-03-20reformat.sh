@@ -6,7 +6,11 @@ do
 	rm $file
 	echo "!meta
 
-author:David Ackroyd
+title:
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
 
 !endmeta
 
