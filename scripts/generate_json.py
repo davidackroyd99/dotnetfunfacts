@@ -3,7 +3,7 @@ from random import randint
 from pathlib import Path
 import json
 
-OUTDIR = "www/resources/data/"
+OUTDIR = "www_stage/resources/data/"
 META = "!meta"
 END_META = "!end"
 
