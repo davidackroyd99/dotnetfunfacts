@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:WHERE [column] != NULL Does Not Work
+url:where-null
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:T-SQL;Common Mistakes
 
 !endmeta
 

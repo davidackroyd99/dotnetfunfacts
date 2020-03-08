@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:The Right Way To Store XSLTs For Data Transformation
+url:embedded-resource-xslt
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:XSLT;Quick Tips
 
 !endmeta
 

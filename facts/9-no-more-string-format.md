@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:A New Way To Format Strings
+url:string-interpolation
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:C#;Language Fundamentals;Quick Tips
 
 !endmeta
 

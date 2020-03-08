@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:SQL String Comparisons Are Not Case Sensitive
+url:sql-case-sensitivity
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:T-SQL;Common Mistakes
 
 !endmeta
 

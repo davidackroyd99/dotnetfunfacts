@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:Checking For Empty Strings With String.IsNullOrWhitespace
+url:is-null-or-whitespace
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:C#;Quick Tips
 
 !endmeta
 

@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title: The Difference Between Readonly and Const
+url:readonly-and-const
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:C#;Language Fundamentals;Keyword Behaviour
 
 !endmeta
 

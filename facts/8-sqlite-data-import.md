@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:Importing and Exporting CSV Data From SQLite3
+url:sqlite3-csv
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:SQLite;CSV;Quick Tips
 
 !endmeta
 

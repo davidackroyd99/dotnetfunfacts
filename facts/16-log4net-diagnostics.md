@@ -3,10 +3,11 @@ This fact was actually created before the date listed, but the metadata system w
 !meta
 
 title:Troubleshooting Log4Net
+url:troubleshooting-log4net
 contributors:David Ackroyd
 created:2020-03-08
 modified:2020-03-08
-tags:
+tags:Log4Net;Quick Tips
 
 !endmeta
 
