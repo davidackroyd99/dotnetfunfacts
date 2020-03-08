@@ -1,3 +1,14 @@
+!meta
+
+title: notes about the fact that will be ignored by the parser.
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 Some notes about the fact that will be ignored by the parser.
 
 !meta

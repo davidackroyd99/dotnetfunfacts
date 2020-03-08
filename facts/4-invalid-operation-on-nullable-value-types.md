@@ -1,3 +1,14 @@
+!meta
+
+title:Common Cause of an InvalidOperationException
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Common Cause of an InvalidOperationException
 	int? a = null;
 	Console.WriteLine(a.Value);

@@ -1,3 +1,14 @@
+!meta
+
+title:The Right Way To Store XSLTs For Data Transformation
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### The Right Way To Store XSLTs For Data Transformation
 
 Still, in 2020, a lot of projects .NET developers undertake involve reading data from xml files that have been FTP'd on to the server, parsing these documents, and then performing some action. The developer rarely has control over the schema of the input XML and to make matters worse it's often subject to change, so the developer will write an XSLT file which transforms the input into some XML format that can then be serialized.

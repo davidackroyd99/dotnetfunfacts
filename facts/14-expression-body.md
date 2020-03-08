@@ -1,3 +1,14 @@
+!meta
+
+title:Expression Body Definition
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Expression Body Definition
 
 C# 6 provides a more readable format for single expression methods and readonly properties called an 'expression body definition'.

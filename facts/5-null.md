@@ -1,3 +1,14 @@
+!meta
+
+title:Null Confusion
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Null Confusion
 Null can be confusing, so here is a metaphor that hopefully makes it a bit clearer.
 

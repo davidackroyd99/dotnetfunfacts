@@ -1,8 +1,8 @@
-FACTS_DIR="../facts/*"
+FACTS_DIR="facts/*"
 
 for file in $FACTS_DIR
 do
-	fact_name=$(head -1 $file | cut -c4-)
+	fact_name=$(head -1 $file | cut -c5-)
 	contents=$(cat $file)
 	rm $file
 	echo "!meta

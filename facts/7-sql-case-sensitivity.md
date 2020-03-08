@@ -1,3 +1,14 @@
+!meta
+
+title:SQL String Comparisons Are Not Case Sensitive
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### SQL String Comparisons Are Not Case Sensitive
 
 T-SQL is case insensitive and this means that the WHERE clauses that compare column values to some known string will not be case sensitive either. This means that

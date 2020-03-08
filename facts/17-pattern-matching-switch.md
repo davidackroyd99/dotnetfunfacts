@@ -1,3 +1,14 @@
+!meta
+
+title:Pattern Matching Switch
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Pattern Matching Switch
 
 C# 7 introduced support for pattern matching switch statements. 

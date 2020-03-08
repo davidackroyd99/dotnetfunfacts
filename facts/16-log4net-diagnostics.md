@@ -1,3 +1,14 @@
+!meta
+
+title:Troubleshooting Log4Net
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Troubleshooting Log4Net
 
 You can enable log4net internal debugging by adding this to your config file:

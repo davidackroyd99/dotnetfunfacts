@@ -1,3 +1,14 @@
+!meta
+
+title:Order of Elements In A Project File
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### Order of Elements In A Project File
 
 A project file is actually just an MSBuild script. This is intially confusing because a .csproj seems to contain XML data that describes the project (its name, root namespace, etc.), and crucially it seems as though the order of the 'elements' of this xml document shouldn't matter. It does. MSBuild will execute all of the statements in order, just like any other script.

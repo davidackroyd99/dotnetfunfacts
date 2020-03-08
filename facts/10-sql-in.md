@@ -1,3 +1,14 @@
+!meta
+
+title:T-SQL IN Statement
+contributors:David Ackroyd
+created:2020-03-08
+modified:2020-03-08
+tags:
+
+!endmeta
+
+
 ### T-SQL IN Statement
 
 In T-SQL you can use the `IN` statement in a `WHERE` clause to filter results by a list or subquery.
