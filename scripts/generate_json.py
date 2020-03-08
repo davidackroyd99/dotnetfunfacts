@@ -5,7 +5,7 @@ import json
 
 OUTDIR = "www/generated/data/"
 META = "!meta"
-END_META = "!end"
+END_META = "!endmeta"
 
 class JsonDoc():
 	def __init__(self):
