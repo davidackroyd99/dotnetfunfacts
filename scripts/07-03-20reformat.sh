@@ -15,5 +15,6 @@ tags:
 
 !endmeta
 
-"$contents >> $file
+
+${contents}" >> $file
 done
