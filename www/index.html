@@ -9,7 +9,7 @@
         <div class="content" id="app">
             <div class="fact-list">
                 <li v-for="fact in facts" :key="fact.id">
-                    <input type="button" @click="setCurrentFact(fact.id)" :value="fact.metadata.title"/>
+                    <input type="button" @click="setCurrentFact(fact.metadata.url)" :value="fact.metadata.title"/>
                 </li>
             </div>
         </div>

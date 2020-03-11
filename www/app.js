@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         facts: [],
-        currentFact: 0
+        currentFact: ''
     },
     created: function() {
         fetch("generated/data/index.json", {credentials: 'same-origin'})
@@ -12,9 +12,9 @@ var app = new Vue({
             });
     },
     methods: {
-        setCurrentFact: function(id) {
-            this.currentFact = id;
-            console.log(id);
+        setCurrentFact: function(url) {
+            this.currentFact = url;
+            history.pushState(null, '', url);
         }
     }
 });
