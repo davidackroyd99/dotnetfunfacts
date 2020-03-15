@@ -1,42 +1,30 @@
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<script src="data.js"></script>
-	</head>
-
-	<body>
-		<header>
-			<nav id="navbar"><a href="index.html">Home</a>|</nav>
+    <head>
+        <meta charset="UTF-8">
+        <title>.NET Fun Facts</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+			<!--<nav id="navbar"><a href="index.html">Home</a>|<a href="SQL_String_Comparisons_Are_Not_Case_Sensitive.html">Random Fact</a></nav>-->
 			<h1>.NET Fun Facts</h1>
 			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
-		</header><div class="fact-link-container"><a href='Constructor_Overloading_And_Chaining.html'> Constructor Overloading And Chaining</a>
-</div><div class="fact-link-container"><a href='The_Right_Way_To_Store_XSLTs_For_Data_Transformation.html'> The Right Way To Store XSLTs For Data Transformation</a>
-</div><div class="fact-link-container"><a href='Pattern_Matching_Switch.html'> Pattern Matching Switch</a>
-</div><div class="fact-link-container"><a href='Troubleshooting_Log4Net.html'> Troubleshooting Log4Net</a>
-</div><div class="fact-link-container"><a href='WHERE_[column]_!=_NULL_Does_Not_Work.html'> WHERE [column] != NULL Does Not Work</a>
-</div><div class="fact-link-container"><a href='Expression_Body_Definition.html'> Expression Body Definition</a>
-</div><div class="fact-link-container"><a href='Windows_File_System_Case_Sensitivity.html'> Windows File System Case Sensitivity</a>
-</div><div class="fact-link-container"><a href='Adding_A_Port_Number_To_A_SQL_Server_Connection_String.html'> Adding A Port Number To A SQL Server Connection String</a>
-</div><div class="fact-link-container"><a href='The_Basics_of_CORS_With_IIS.html'> The Basics of CORS With IIS</a>
-</div><div class="fact-link-container"><a href='T-SQL_IN_Statement.html'> T-SQL IN Statement</a>
-</div><div class="fact-link-container"><a href='A_New_Way_To_Format_Strings.html'> A New Way To Format Strings</a>
-</div><div class="fact-link-container"><a href='Importing_and_Exporting_CSV_Data_From_SQLite3.html'> Importing and Exporting CSV Data From SQLite3</a>
-</div><div class="fact-link-container"><a href='SQL_String_Comparisons_Are_Not_Case_Sensitive.html'> SQL String Comparisons Are Not Case Sensitive</a>
-</div><div class="fact-link-container"><a href='Checking_For_Empty_Strings_With_String_IsNullOrWhitespace.html'> Checking For Empty Strings With String.IsNullOrWhitespace</a>
-</div><div class="fact-link-container"><a href='Null_Confusion.html'> Null Confusion</a>
-</div><div class="fact-link-container"><a href='Common_Cause_of_an_InvalidOperationException.html'> Common Cause of an InvalidOperationException</a>
-</div><div class="fact-link-container"><a href='Order_of_Elements_In_A_Project_File.html'> Order of Elements In A Project File</a>
-</div><div class="fact-link-container"><a href='Easy_Date_Printing.html'> Easy Date Printing</a>
-</div><div class="fact-link-container"><a href='The_Difference_Between_Readonly_and_Const.html'> The Difference Between Readonly and Const</a>
-</div>		<footer>
+		</header>
+        <div class="content" id="app">
+            <div class="fact-list">
+                <div class="fact-section" v-for="fact in facts" :key="fact.id">
+                    <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
+                    <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
 			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
 			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
 		</footer>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", function(){
-				document.getElementById("navbar").innerHTML += "<a href=\"" + factsArray[Math.floor(Math.random()*factsArray.length)] + "\">Random Fact</a>";
-			});
-		</script>
-	</body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>
