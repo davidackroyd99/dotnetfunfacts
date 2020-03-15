@@ -12,7 +12,7 @@
     			<h1>.NET Fun Facts</h1>
     			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
                 <ul class="tag-select">
-                    <li class="tag-toggle" v-for="tag in tags" :key="index">
+                    <li class="tag-toggle" v-for="tag in tags" @click="selectTag(tag)" v-bind:class="selectedTags.includes(tag) ? 'tag-toggle-selected' : ''">
                         {{ tag }}
                     </li>
                 </ul>

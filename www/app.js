@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         facts: [],
         tags: [],
+        selectedTags: [],
         currentFact: window.location.hash.substr(1)
     },
     created: function() {
@@ -29,6 +30,14 @@ var app = new Vue({
             }
 
             window.location.hash = url;
+        },
+        selectTag: function(tag) {
+            if(!this.selectedTags.includes(tag)) {
+                this.selectedTags.push(tag);
+            }
+            else {
+                this.selectedTags = this.selectedTags.filter(function (elem) {elem == tag});
+            }
         }
     }
 });
