@@ -11,9 +11,6 @@ tags:T-SQL;Common Mistakes
 
 !endmeta
 
-
-### SQL String Comparisons Are Not Case Sensitive
-
 T-SQL is case insensitive and this means that the WHERE clauses that compare column values to some known string will not be case sensitive either. This means that
 
 	SELECT * FROM [TABLE_NAME] WHERE [COLUMN] = 'this is a string'

@@ -11,9 +11,6 @@ tags:C#;Language Fundamentals
 
 !endmeta
 
-
-### Expression Body Definition
-
 C# 6 provides a more readable format for single expression methods and readonly properties called an 'expression body definition'.
 
 	public class MyClass

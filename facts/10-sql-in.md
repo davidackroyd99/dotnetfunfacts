@@ -11,9 +11,6 @@ tags:T-SQL;Quick Tips
 
 !endmeta
 
-
-### T-SQL IN Statement
-
 In T-SQL you can use the `IN` statement in a `WHERE` clause to filter results by a list or subquery.
 
 The following query selects all employees with any of the job titles in the list.

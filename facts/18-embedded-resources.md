@@ -11,9 +11,6 @@ tags:XSLT;Quick Tips
 
 !endmeta
 
-
-### The Right Way To Store XSLTs For Data Transformation
-
 Still, in 2020, a lot of projects .NET developers undertake involve reading data from xml files that have been FTP'd on to the server, parsing these documents, and then performing some action. The developer rarely has control over the schema of the input XML and to make matters worse it's often subject to change, so the developer will write an XSLT file which transforms the input into some XML format that can then be serialized.
 
 Before, I used to read the XSLT from a directory stored in settings, but I was constantly losing the XSLT, or placing it in the wrong folder, or not realising it was there when I came to fix an issue. The XSLT needs to be treated like any other part of the code - under source control and part of the final .dll.

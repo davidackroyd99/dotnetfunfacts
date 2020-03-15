@@ -11,9 +11,6 @@ tags:C#;Language Fundamentals;Quick Tips
 
 !endmeta
 
-
-### A New Way To Format Strings
-
 Formatting strings (ie substituting placeholders for expressions) in C# used to be inflexible and difficult to read because of `String.Format`. Luckily, in C# 6 and above you can use string interpolation.
 
 With `String.Format`:

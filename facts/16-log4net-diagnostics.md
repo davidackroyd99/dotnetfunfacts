@@ -11,9 +11,6 @@ tags:Log4Net;Quick Tips
 
 !endmeta
 
-
-### Troubleshooting Log4Net
-
 You can enable log4net internal debugging by adding this to your config file:
 
 	<appSettings>

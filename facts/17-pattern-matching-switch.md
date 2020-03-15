@@ -11,9 +11,6 @@ tags:C#;Language Fundamentals
 
 !endmeta
 
-
-### Pattern Matching Switch
-
 C# 7 introduced support for pattern matching switch statements. 
 
 	switch(obj)

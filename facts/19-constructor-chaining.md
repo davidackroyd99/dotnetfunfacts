@@ -11,9 +11,6 @@ tags:C#;Language Fundamentals
 
 !endmeta
 
-
-### Constructor Overloading And Chaining
-
 In C# it is not possible to invoke a constructor from inside the method body. If you think about this, it makes sense - once you are inside a method, the constructor must have already been called. However, consider the following constructor signatures:
 
     public SomeObject();

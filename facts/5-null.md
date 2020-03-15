@@ -11,8 +11,6 @@ tags:C#;Language Fundamentals
 
 !endmeta
 
-
-### Null Confusion
 Null can be confusing, so here is a metaphor that hopefully makes it a bit clearer.
 
 Imagine that you work in a hotel with lots of difference rooms. You have to distribute a load of parcels that have pieces of paper attached to them. If the piece of paper is blank, that doesn't mean that the piece of paper doesn't exist, or that none of the rooms exist, it just means that you can't deliver the parcel.
