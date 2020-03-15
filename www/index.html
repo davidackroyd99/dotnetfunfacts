@@ -16,10 +16,11 @@
                         {{ tag }}
                     </li>
                 </ul>
+                <a @click="clearTags">Clear All</a>
     		</header>
             <div class="content">
                 <div class="fact-list">
-                    <div class="fact-section" v-for="fact in facts" :key="fact.id">
+                    <div class="fact-section" v-for="fact in getFacts()" :key="fact.id">
                         <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
                         <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
                         </div>

@@ -36,7 +36,35 @@ var app = new Vue({
                 this.selectedTags.push(tag);
             }
             else {
-                this.selectedTags = this.selectedTags.filter(function (elem) {elem == tag});
+                this.selectedTags.splice(this.selectedTags.indexOf(tag), 1);
+            }
+        },
+        clearTags: function() {
+            this.selectedTags = [];
+        },
+        getFacts: function() {
+            if(this.selectedTags.length == 0) {
+                return this.facts;
+            }
+            else {
+                let taggedFacts = [];
+
+                for(let i = 0; i < this.facts.length; i++) {
+                    let addToCollection = true;
+
+                    for(let j = 0; j < this.selectedTags.length; j++) {
+                        if(!this.facts[i].metadata.tags.includes(this.selectedTags[j])) {
+                            addToCollection = false;
+                            break;
+                        }
+                    }
+
+                    if(addToCollection) {
+                        taggedFacts.push(this.facts[i]);
+                    }
+                }
+
+                return taggedFacts;
             }
         }
     }
