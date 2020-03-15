@@ -8,9 +8,11 @@
     <body>
         <div class="content" id="app">
             <div class="fact-list">
-                <li v-for="fact in facts" :key="fact.id">
-                    <input type="button" @click="setCurrentFact(fact.metadata.url)" :value="fact.metadata.title"/>
-                </li>
+                <div class="fact-section" v-for="fact in facts" :key="fact.id">
+                    <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
+                    <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
+                    </div>
+                </div>
             </div>
         </div>
 

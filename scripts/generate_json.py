@@ -2,6 +2,7 @@ from typing import List, Dict
 from random import randint
 from pathlib import Path
 import json
+import subprocess
 
 OUTDIR = "www/generated/data/"
 META = "!meta"
@@ -60,7 +61,13 @@ class FactDoc(JsonDoc):
 		return metadata
 
 	def _get_fact_body(self, fact_data: str) -> str:
-		return fact_data.split(END_META)[1]
+		body = fact_data.split(END_META)[1]
+
+		with open("temp.md", "w") as f:
+			f.write(body)
+
+		proc = subprocess.Popen("markdown temp.md", shell=True, stdout=subprocess.PIPE)
+		return proc.stdout.read().decode('ascii')
 
 	def serialize(self) -> dict:
 		d = super().serialize()
