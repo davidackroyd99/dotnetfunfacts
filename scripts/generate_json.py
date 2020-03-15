@@ -1,7 +1,6 @@
 from typing import List, Dict
 from random import randint
 from pathlib import Path
-from os import mkdir
 import json
 import subprocess
 
@@ -92,11 +91,6 @@ class IndexDoc(JsonDoc):
 
 index = IndexDoc()
 p = Path("./facts")
-
-try:
-	mkdir(OUTDIR)
-except FileExistsError:
-	pass
 
 for fact_file in [str(path) for path in p.glob("*.md")]:
 	doc = FactDoc(fact_file)
