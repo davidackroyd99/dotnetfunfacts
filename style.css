@@ -56,6 +56,27 @@ footer {
 	border-top: 3px solid black;
 }
 
+.tag-select {
+	list-style: none;
+	padding: 0;
+}
+
+.tag-toggle {
+	display: inline-block;
+	margin: 8px 8px;
+	padding: 4px 8px;
+	border: 2px solid blue;
+	border-radius: 8px;
+}
+
+.tag-toggle:hover {
+	background-color: lightgrey;
+}
+
+.tag-toggle-selected {
+	background-color: lightgrey;
+}
+
 .fact-section {
 	margin: 10px 0px;
 }

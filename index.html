@@ -6,24 +6,32 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-			<!--<nav id="navbar"><a href="index.html">Home</a>|<a href="SQL_String_Comparisons_Are_Not_Case_Sensitive.html">Random Fact</a></nav>-->
-			<h1>.NET Fun Facts</h1>
-			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
-		</header>
-        <div class="content" id="app">
-            <div class="fact-list">
-                <div class="fact-section" v-for="fact in facts" :key="fact.id">
-                    <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
-                    <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
+        <div id="app">
+            <header>
+    			<!--<nav id="navbar"><a href="index.html">Home</a>|<a href="SQL_String_Comparisons_Are_Not_Case_Sensitive.html">Random Fact</a></nav>-->
+    			<h1>.NET Fun Facts</h1>
+    			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+                <ul class="tag-select">
+                    <li class="tag-toggle" v-for="tag in tags" @click="selectTag(tag)" v-bind:class="selectedTags.includes(tag) ? 'tag-toggle-selected' : ''">
+                        {{ tag }}
+                    </li>
+                </ul>
+                <a @click="clearTags">Clear All</a>
+    		</header>
+            <div class="content">
+                <div class="fact-list">
+                    <div class="fact-section" v-for="fact in getFacts()" :key="fact.id">
+                        <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
+                        <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
+                        </div>
                     </div>
                 </div>
             </div>
+            <footer>
+    			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
+    			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
+    		</footer>
         </div>
-        <footer>
-			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
-			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
-		</footer>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="app.js"></script>
     </body>
