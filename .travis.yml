@@ -1,13 +1,21 @@
-language: bash
+language: python
+
+python:
+  - "3.8"
+
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install nodejs-legacy npm
+    - sudo npm install markdown-to-html -g
 
 script:
     - bash scripts/build-site.sh
 
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   keep_history: true
-#   on:
-#     branch: master
-#   local_dir: www
+DEPLOY:
+  PROVIDER: PAGES
+  SKIP_CLEANUP: TRUE
+  GITHUB_TOKEN: $GITHUB_TOKEN
+  KEEP_HISTORY: TRUE
+  ON:
+    BRANCH: MASTER
+  LOCAL_DIR: WWW
