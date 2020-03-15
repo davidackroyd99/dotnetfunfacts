@@ -22,7 +22,9 @@
                 <div class="fact-list">
                     <div class="fact-section" v-for="fact in getFacts()" :key="fact.id">
                         <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
-                        <div class="fact-body" v-html="fact.body" v-if="fact.metadata.url === currentFact">
+                        <div class="fact-content" v-if="fact.metadata.url === currentFact">
+                            <h1 class="fact-title">{{ fact.metadata.title }}</h1>
+                            <div class="fact-body" v-html="fact.body"></div>
                         </div>
                     </div>
                 </div>
