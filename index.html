@@ -21,6 +21,8 @@
                             </div>
                             <div class="fact-content" v-if="fact.metadata.url === currentFact">
                                 <h1 class="fact-title">{{ fact.metadata.title }}</h1>
+                                <p>Contributors: {{ fact.metadata.contributors }}<p>
+
                                 <div class="fact-body" v-html="fact.body"></div>
                             </div>
                         </div>
