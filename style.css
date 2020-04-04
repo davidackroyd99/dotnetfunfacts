@@ -57,6 +57,7 @@ footer {
 }
 
 .tag-select {
+	margin-top: 48px;
 	list-style: none;
 	padding: 0;
 }
@@ -79,4 +80,18 @@ footer {
 
 .fact-section {
 	margin: 10px 0px;
+}
+
+.fact-link {
+	font-size: 20px;
+}
+
+.fact-tags {
+	font-style: italic;
+	margin-left: 32px;
+}
+
+.fact-tags p {
+	display: inline-block;
+	margin: 8px 4px;
 }

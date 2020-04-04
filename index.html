@@ -3,36 +3,47 @@
     <head>
         <meta charset="UTF-8">
         <title>.NET Fun Facts</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="app">
-            <header>
-    			<!--<nav id="navbar"><a href="index.html">Home</a>|<a href="SQL_String_Comparisons_Are_Not_Case_Sensitive.html">Random Fact</a></nav>-->
-    			<h1>.NET Fun Facts</h1>
-    			<p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
-                <ul class="tag-select">
-                    <li class="tag-toggle" v-for="tag in tags" @click="selectTag(tag)" v-bind:class="selectedTags.includes(tag) ? 'tag-toggle-selected' : ''">
-                        {{ tag }}
-                    </li>
-                </ul>
-                <a @click="clearTags">Clear All</a>
-    		</header>
-            <div class="content">
-                <div class="fact-list">
-                    <div class="fact-section" v-for="fact in getFacts()" :key="fact.id">
-                        <a @click="setCurrentFact(fact.metadata.url)">{{ fact.metadata.title }}</a>
-                        <div class="fact-content" v-if="fact.metadata.url === currentFact">
-                            <h1 class="fact-title">{{ fact.metadata.title }}</h1>
-                            <div class="fact-body" v-html="fact.body"></div>
+            <div class="row">
+                <div class="content col-md-8">
+                    <h1>.NET Fun Facts</h1>
+                    <p>A selection of 'fun facts' and useful tidbits of information that I have compiled about C#, the .NET Framework, and surrounding tools developed by both Microsoft and other organisations.</p>
+
+                    <div class="fact-list">
+                        <div class="fact-section" v-for="fact in getFacts()" :key="fact.id">
+                            <a class="fact-link" @click="setCurrentFact(fact.metadata.url)" :id="fact.metadata.url">{{ fact.metadata.title }}</a>
+                            <div class="fact-tags">
+                                <p>Tags: </p><p v-for="tag in fact.metadata.tags">{{ tag }}</p>
+                            </div>
+                            <div class="fact-content" v-if="fact.metadata.url === currentFact">
+                                <h1 class="fact-title">{{ fact.metadata.title }}</h1>
+                                <div class="fact-body" v-html="fact.body"></div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sticky-top">
+                      <ul class="tag-select">
+                        <li class="tag-toggle" v-for="tag in tags" @click="selectTag(tag)"
+                            v-bind:class="selectedTags.includes(tag) ? 'tag-toggle-selected' : ''">
+                            {{ tag }}
+                        </li>
+                    </ul>
+                    <a @click="clearTags">Clear All</a>
+                </div>
+
                 </div>
             </div>
             <footer>
     			<p>By David Ackroyd (<a href="https://www.linkedin.com/in/david-ackroyd-659933193">LinkedIn</a>)</p>
     			<p>If you see information on here that isn't right, or have a fun fact of your own, please raise an issue on <a href="https://github.com/davidackroyd99/dotnetfunfacts">GitHub</a>.</p>
     		</footer>
+
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="app.js"></script>
