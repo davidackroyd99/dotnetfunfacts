@@ -5,7 +5,7 @@ url:find-sql-tables
 contributors:John Warren
 created:2020-3-9
 modified:2020-3-9
-tags:SQL;Quick Tips
+tags:T-SQL;Quick Tips
 
 !endmeta
 You can easily find a SQL table name by querying sys.tables:
